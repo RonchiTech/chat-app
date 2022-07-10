@@ -24,7 +24,6 @@ app.use(
 const typeDefs = fs.readFileSync('./schema.graphql', { encoding: 'utf8' });
 const resolvers = require('./resolvers');
 
-
 function context({ req }) {
   if (req && req.user) {
     return { userId: req.user.sub };
@@ -46,6 +45,7 @@ app.post('/login', (req, res) => {
   res.send({ token });
 });
 const httpServer = http.createServer(app);
+
 apolloServer.installSubscriptionHandlers(httpServer);
 
 httpServer.listen(port, () => console.log(`Server started on port ${port}`));
