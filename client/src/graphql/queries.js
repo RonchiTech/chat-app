@@ -31,12 +31,12 @@ const onMessageAddedSubscription = gql`
   }
 `;
 
-export async function onMessageAdded(handleMessage) {
-  const observable = await client.subscribe({
+export function onMessageAdded(handleMessage) {
+  const observable = client.subscribe({
     query: onMessageAddedSubscription,
   });
+
   return observable.subscribe((result) => {
-    console.log('result', result);
     handleMessage(result.data.onMessageAdded);
   });
 }

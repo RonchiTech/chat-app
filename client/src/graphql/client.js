@@ -33,7 +33,13 @@ const httpLink = ApolloLink.from([
 
 const wsLink = new WebSocketLink({
   uri: wsUrl,
-  options: { lazy: true, reconnect: true },
+  options: {
+    lazy: true,
+    reconnect: true,
+    connectionParams: () => ({
+      accessToken: getAccessToken(),
+    }),
+  },
 });
 
 const client = new ApolloClient({
