@@ -1,27 +1,27 @@
 import React, { useEffect, useState } from 'react';
-import { useQuery } from '@apollo/react-hooks';
-import { messagesQuery, getMessages } from './graphql/queries';
+import { useQuery } from '@apollo/client';
+import { messagesQuery } from './graphql/queries';
 // import { addMessage, getMessages, onMessageAdded } from './graphql/queries';
 import MessageInput from './MessageInput';
 import MessageList from './MessageList';
 
 const Chat = ({ user }) => {
-  // const response = useQuery(messagesQuery);
-  // console.log(data);
+  const { error, loading, data } = useQuery(messagesQuery);
+  // console.log(response);
   const [messages, setMessages] = useState([]);
   // const messages = data ? data.messages : [];
 
   useEffect(() => {
     // console.log(response);
-    // if(data) {
-    //   setMessages(data.messages)
-    // }
-    const fetchMessages = async () => {
-      const messages = await getMessages();
-      setMessages(messages);
-    };
-    fetchMessages();
-  }, []);
+    if (data) {
+      setMessages(data.messages);
+    }
+    // const fetchMessages = async () => {
+    //   const messages = await getMessages();
+    //   setMessages(messages);
+    // };
+    // fetchMessages();
+  }, [data]);
 
   const handleSend = async (text) => {
     // const result = messages.push(message);
@@ -33,8 +33,8 @@ const Chat = ({ user }) => {
     // await addMessage(text);
   };
 
-  // if (loading) return <p>Loading ...</p>;
-  // if (error) throw new Error(error);
+  if (loading) return <p>Loading ...</p>;
+  if (error) throw new Error(error);
 
   return (
     <section className="section">

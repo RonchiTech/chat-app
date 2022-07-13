@@ -4,9 +4,10 @@ import {
   HttpLink,
   InMemoryCache,
   split,
-} from 'apollo-boost';
-import { getMainDefinition } from 'apollo-utilities';
-import { WebSocketLink } from 'apollo-link-ws';
+  
+} from '@apollo/client/core';
+import { getMainDefinition } from '@apollo/client/utilities';
+import { WebSocketLink } from '@apollo/client/link/ws';
 import { getAccessToken } from '../auth';
 
 const httpUrl = 'http://localhost:9000/graphql';

@@ -1,4 +1,4 @@
-import { gql } from 'apollo-boost';
+import { gql } from '@apollo/client/core';
 import client from './client';
 
 export const messagesQuery = gql`
