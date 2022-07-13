@@ -30,7 +30,7 @@ function context({ req, connection }) {
   }
 
   if (connection?.context?.accessToken) {
-    console.log(connection?.context?.accessToken);
+    // console.log(connection?.context?.accessToken);
     const decodedToken = jwt.verify(connection.context.accessToken, jwtSecret);
     return { userId: decodedToken.sub };
   }
