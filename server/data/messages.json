@@ -5,98 +5,38 @@
     "text": "Welcome!"
   },
   {
-    "id": "Hyb-v43j9",
-    "from": "bob",
-    "text": "subs"
-  },
-  {
-    "id": "SJaGvNnj5",
-    "from": "bob",
-    "text": "test"
-  },
-  {
-    "id": "By67vVnoq",
-    "from": "charlie",
-    "text": "hey"
-  },
-  {
-    "id": "ryRhDE3i5",
-    "from": "bob",
-    "text": "test"
-  },
-  {
-    "id": "ByVW_Ehj5",
-    "from": "bob",
-    "text": "1"
-  },
-  {
-    "id": "H1G7_E3jq",
-    "from": "bob",
-    "text": "add"
-  },
-  {
-    "id": "ByxEYNhjc",
-    "from": "bob",
-    "text": "hey"
-  },
-  {
-    "id": "S1M4FV3j9",
-    "from": "bob",
-    "text": "can"
-  },
-  {
-    "id": "S1q8FV2s9",
-    "from": "bob",
-    "text": "test"
-  },
-  {
-    "id": "BJcDKV3j5",
-    "from": "charlie",
-    "text": "hi"
-  },
-  {
-    "id": "rJCmh43sq",
-    "from": "bob",
-    "text": "can u hear me"
-  },
-  {
-    "id": "Hk8wCNnj9",
-    "from": "charlie",
-    "text": "yup"
-  },
-  {
-    "id": "ryet0Vho5",
-    "from": "bob",
-    "text": "woy"
-  },
-  {
-    "id": "BkXqCV3jq",
-    "from": "charlie",
-    "text": "byee"
-  },
-  {
-    "id": "HJUUlrno5",
+    "id": "BJ0JVS2jq",
     "from": "alice",
-    "text": "testing ni sya"
+    "text": "Testing"
   },
   {
-    "id": "Hk08xH2ic",
+    "id": "rybgEr2oc",
     "from": "bob",
-    "text": "hello allice"
+    "text": "hello alice"
   },
   {
-    "id": "rJWvgrns5",
+    "id": "r1L74H3sq",
     "from": "bob",
-    "text": "how are u?"
+    "text": "this should still be working"
   },
   {
-    "id": "BkSveS3s5",
+    "id": "SJyOVSni9",
     "from": "alice",
-    "text": "im fine bob"
+    "text": "hey there bob"
   },
   {
-    "id": "rJWsxHho5",
+    "id": "SJmdNHnj9",
     "from": "bob",
-    "text": "good"
+    "text": "yea alice"
+  },
+  {
+    "id": "ByI1US3i9",
+    "from": "charlie",
+    "text": "hi guys"
+  },
+  {
+    "id": "BJ51Ur2j9",
+    "from": "bob",
+    "text": "hey"
   }
 ]

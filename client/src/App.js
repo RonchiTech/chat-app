@@ -15,7 +15,7 @@ const App = () => {
 
   const handleLogout = () => {
     logout();
-    this.setState({ user: null });
+    setUser(null);
   };
 
   if (!user) {

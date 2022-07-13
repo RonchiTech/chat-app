@@ -1,5 +1,5 @@
 import { gql } from '@apollo/client/core';
-import client from './client';
+// import client from './client';
 
 export const messagesQuery = gql`
   query MessagesQuery {
@@ -31,25 +31,25 @@ export const onMessageAddedSubscription = gql`
   }
 `;
 
-export function onMessageAdded(handleMessage) {
-  const observable = client.subscribe({
-    query: onMessageAddedSubscription,
-  });
+// export function onMessageAdded(handleMessage) {
+//   const observable = client.subscribe({
+//     query: onMessageAddedSubscription,
+//   });
 
-  return observable.subscribe((result) => {
-    handleMessage(result.data.onMessageAdded);
-  });
-}
+//   return observable.subscribe((result) => {
+//     handleMessage(result.data.onMessageAdded);
+//   });
+// }
 
-export async function addMessage(text) {
-  const { data } = await client.mutate({
-    mutation: addMessageMutation,
-    variables: { input: { text } },
-  });
-  return data.message;
-}
+// export async function addMessage(text) {
+//   const { data } = await client.mutate({
+//     mutation: addMessageMutation,
+//     variables: { input: { text } },
+//   });
+//   return data.message;
+// }
 
-export async function getMessages() {
-  const { data } = await client.query({ query: messagesQuery });
-  return data.messages;
-}
+// export async function getMessages() {
+//   const { data } = await client.query({ query: messagesQuery });
+//   return data.messages;
+// }
