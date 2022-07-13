@@ -1,36 +1,24 @@
 import React, { useEffect, useState } from 'react';
-import { useQuery } from '@apollo/client';
-import { messagesQuery } from './graphql/queries';
+import { useQuery, useMutation } from '@apollo/client';
+import { messagesQuery, addMessageMutation } from './graphql/queries';
 // import { addMessage, getMessages, onMessageAdded } from './graphql/queries';
 import MessageInput from './MessageInput';
 import MessageList from './MessageList';
 
 const Chat = ({ user }) => {
   const { error, loading, data } = useQuery(messagesQuery);
-  // console.log(response);
+  const [addMessage] = useMutation(addMessageMutation);
   const [messages, setMessages] = useState([]);
-  // const messages = data ? data.messages : [];
 
   useEffect(() => {
-    // console.log(response);
-    if (data) {
-      setMessages(data.messages);
+    if (data?.messages) {
+      setMessages((prevValue) => prevValue.concat(data.messages));
     }
-    // const fetchMessages = async () => {
-    //   const messages = await getMessages();
-    //   setMessages(messages);
-    // };
-    // fetchMessages();
   }, [data]);
 
   const handleSend = async (text) => {
-    // const result = messages.push(message);
-    // console.log('result', result);
-    // setMessages(messages.concat(message));
-    // setMessages((prevValue) => {
-    //   return [...prevValue, message];
-    // });
-    // await addMessage(text);
+    const newMessage = await addMessage({ variables: { input: { text } } });
+    setMessages((prevValue) => prevValue.concat(newMessage.data.message));
   };
 
   if (loading) return <p>Loading ...</p>;
